@@ -10,7 +10,7 @@
 			{
 				"transform": "ts-transformer-replace-paths",
 				"replaceImportPaths": {
-					"^@saekitominaga/isbn-verify$": "/customelements-input-isbn/node_modules/@saekitominaga/isbn-verify/dist/ISBN.mjs",
+					"^@saekitominaga/isbn-verify$": "/customelements-input-isbn/node_modules/@saekitominaga/isbn-verify/dist/ISBN.esm.js",
 				}
 			}
 		],

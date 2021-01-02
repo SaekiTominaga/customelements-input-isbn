@@ -12,11 +12,11 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return privateMap.get(receiver);
 };
 var _checkDigitMessage, _formSubmitEventListener;
-import ISBN from '/customelements-input-isbn/node_modules/@saekitominaga/isbn-verify/dist/ISBN.mjs';
+import ISBN from '/customelements-input-isbn/node_modules/@saekitominaga/isbn-verify/dist/ISBN.esm.js';
 /**
  * ISBN input field
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 export default class InputIsbn extends HTMLInputElement {
     constructor() {

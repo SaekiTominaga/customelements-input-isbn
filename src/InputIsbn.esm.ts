@@ -3,7 +3,7 @@ import ISBN from '@saekitominaga/isbn-verify';
 /**
  * ISBN input field
  *
- * @version 1.0.0
+ * @version 1.0.1
  */
 export default class InputIsbn extends HTMLInputElement {
 	#checkDigitMessage: string | undefined; // チェックデジットが不正なときのメッセージ

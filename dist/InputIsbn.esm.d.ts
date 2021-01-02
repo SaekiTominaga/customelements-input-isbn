@@ -1,7 +1,7 @@
 /**
  * ISBN input field
  *
- * @version 1.0.1
+ * @version 1.0.2
  */
 export default class InputIsbn extends HTMLInputElement {
     #private;

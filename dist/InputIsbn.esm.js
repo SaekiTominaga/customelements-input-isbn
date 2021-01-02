@@ -16,17 +16,13 @@ import ISBN from '/customelements-input-isbn/node_modules/@saekitominaga/isbn-ve
 /**
  * ISBN input field
  *
- * @version 1.0.1
+ * @version 1.0.2
  */
 export default class InputIsbn extends HTMLInputElement {
     constructor() {
         super();
         _checkDigitMessage.set(this, void 0); // チェックデジットが不正なときのメッセージ
         _formSubmitEventListener.set(this, void 0);
-        this.type = 'text';
-        this.minLength = 10;
-        this.maxLength = 17;
-        this.pattern = '(978|979)-\\d{1,5}-\\d{1,7}-\\d{1,7}-\\d|\\d{13}|\\d{1,5}-\\d{1,7}-\\d{1,7}-[\\dX]|\\d{9}[\\dX]';
         __classPrivateFieldSet(this, _formSubmitEventListener, this._formSubmitEvent.bind(this));
     }
     connectedCallback() {
@@ -35,6 +31,10 @@ export default class InputIsbn extends HTMLInputElement {
             throw new Error('Attribute: `data-validation-message-isbn-checkdigit` is not set.');
         }
         __classPrivateFieldSet(this, _checkDigitMessage, isbnCheckDigitMessage);
+        this.type = 'text';
+        this.minLength = 10;
+        this.maxLength = 17;
+        this.pattern = '(978|979)-\\d{1,5}-\\d{1,7}-\\d{1,7}-\\d|\\d{13}|\\d{1,5}-\\d{1,7}-\\d{1,7}-[\\dX]|\\d{9}[\\dX]';
         this.addEventListener('change', this._changeEvent, { passive: true });
         this.form?.addEventListener('submit', __classPrivateFieldGet(this, _formSubmitEventListener));
     }

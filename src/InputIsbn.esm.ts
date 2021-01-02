@@ -3,7 +3,7 @@ import ISBN from '@saekitominaga/isbn-verify';
 /**
  * ISBN input field
  *
- * @version 1.0.1
+ * @version 1.0.2
  */
 export default class InputIsbn extends HTMLInputElement {
 	#checkDigitMessage: string | undefined; // チェックデジットが不正なときのメッセージ
@@ -12,11 +12,6 @@ export default class InputIsbn extends HTMLInputElement {
 
 	constructor() {
 		super();
-
-		this.type = 'text';
-		this.minLength = 10;
-		this.maxLength = 17;
-		this.pattern = '(978|979)-\\d{1,5}-\\d{1,7}-\\d{1,7}-\\d|\\d{13}|\\d{1,5}-\\d{1,7}-\\d{1,7}-[\\dX]|\\d{9}[\\dX]';
 
 		this.#formSubmitEventListener = this._formSubmitEvent.bind(this);
 	}
@@ -27,6 +22,11 @@ export default class InputIsbn extends HTMLInputElement {
 			throw new Error('Attribute: `data-validation-message-isbn-checkdigit` is not set.');
 		}
 		this.#checkDigitMessage = isbnCheckDigitMessage;
+
+		this.type = 'text';
+		this.minLength = 10;
+		this.maxLength = 17;
+		this.pattern = '(978|979)-\\d{1,5}-\\d{1,7}-\\d{1,7}-\\d|\\d{13}|\\d{1,5}-\\d{1,7}-\\d{1,7}-[\\dX]|\\d{9}[\\dX]';
 
 		this.addEventListener('change', this._changeEvent, { passive: true });
 		this.form?.addEventListener('submit', this.#formSubmitEventListener);

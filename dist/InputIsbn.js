@@ -12,7 +12,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return privateMap.get(receiver);
 };
 var _checkDigitMessage, _formSubmitEventListener;
-import ISBN from '../../isbn-verify/dist/ISBN.esm.js';
+import ISBN from '../../isbn-verify/dist/ISBN.js';
 /**
  * ISBN input field
  *
@@ -103,3 +103,4 @@ export default class InputIsbn extends HTMLInputElement {
     }
 }
 _checkDigitMessage = new WeakMap(), _formSubmitEventListener = new WeakMap();
+//# sourceMappingURL=InputIsbn.js.map

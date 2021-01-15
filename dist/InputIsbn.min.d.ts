@@ -39,4 +39,4 @@ export default class InputIsbn extends HTMLInputElement {
      */
     private _clearMessage;
 }
-//# sourceMappingURL=InputIsbn.esm.d.ts.map
+//# sourceMappingURL=InputIsbn.d.ts.map

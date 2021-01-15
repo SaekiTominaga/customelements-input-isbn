@@ -2,7 +2,36 @@
 	"name": "@saekitominaga/customelements-input-isbn",
 	"version": "1.0.3",
 	"description": "ISBN input field by Custom Elements.",
+	"keywords": [
+		"web-components",
+		"custom-elements",
+		"ISBN"
+	],
+	"homepage": "https://github.com/SaekiTominaga/customelements-input-isbn#readme",
+	"bugs": {
+		"url": "https://github.com/SaekiTominaga/customelements-input-isbn/issues"
+	},
+	"license": "MIT",
+	"author": "Saeki Tominaga",
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
+	"browser": "dist/InputIsbn.js",
+	"types": "dist/InputIsbn.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SaekiTominaga/customelements-input-isbn.git"
+	},
+	"scripts": {
+		"_build:tsc": "ttsc -w",
+		"_build:compress": "onchange -f add -f change -v dist/InputIsbn.js -- brotlin compress dist/InputIsbn.js -m 1",
+		"_build:minify": "onchange -f add -f change -v dist/InputIsbn.js -- terser dist/InputIsbn.js -o dist/InputIsbn.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/InputIsbn.js.map',filename='InputIsbn.js',includeSources,url='InputIsbn.min.js.map'",
+		"_build:minify-compress": "onchange -f add -f change -v dist/InputIsbn.min.js -- brotlin compress dist/InputIsbn.min.js -m 1",
+		"_build:minify-declaration": "onchange -f add -f change -v dist/InputIsbn.d.ts -- cpy dist/InputIsbn.d.ts dist --rename=InputIsbn.min.d.ts",
+		"build": "run-p _build:*"
+	},
 	"dependencies": {
 		"@saekitominaga/isbn-verify": "^1.0.6"
 	},
@@ -21,31 +50,6 @@
 		"ttypescript": "^1.5.12",
 		"typescript": "^4.1.3"
 	},
-	"main": "dist/InputIsbn.esm.js",
-	"types": "dist/InputIsbn.esm.d.ts",
-	"scripts": {
-		"_ts-watch:tsc": "ttsc -w",
-		"_ts-watch:compress": "onchange -f add -f change -v dist/InputIsbn.esm.js -- brotlin compress dist/InputIsbn.esm.js -m 1",
-		"_ts-watch:minify": "onchange -f add -f change -v dist/InputIsbn.esm.js -- terser dist/InputIsbn.esm.js -o dist/InputIsbn.min.esm.js -c ecma=2020 --mangle --ecma 2020 --module --source-map base=dist,filename=InputIsbn.esm.js,includeSources",
-		"_ts-watch:compress-minify": "onchange -f add -f change -v dist/InputIsbn.min.esm.js -- brotlin compress dist/InputIsbn.min.esm.js -m 1",
-		"_ts-watch:dts-minify": "onchange -f add -f change -v dist/InputIsbn.esm.d.ts -- cpy dist/InputIsbn.esm.d.ts dist --rename=InputIsbn.min.esm.d.ts",
-		"ts-watch": "run-p _ts-watch:*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/SaekiTominaga/customelements-input-isbn.git"
-	},
-	"keywords": [
-		"web-components",
-		"custom-elements",
-		"ISBN"
-	],
-	"author": "Saeki Tominaga",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/SaekiTominaga/customelements-input-isbn/issues"
-	},
-	"homepage": "https://github.com/SaekiTominaga/customelements-input-isbn#readme",
 	"publishConfig": {
 		"access": "public"
 	}

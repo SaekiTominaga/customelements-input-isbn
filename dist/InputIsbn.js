@@ -15,8 +15,6 @@ var _checkDigitMessage, _formSubmitEventListener;
 import ISBN from '../../isbn-verify/dist/ISBN.js';
 /**
  * ISBN input field
- *
- * @version 1.0.3
  */
 export default class InputIsbn extends HTMLInputElement {
     constructor() {

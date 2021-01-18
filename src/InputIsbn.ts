@@ -2,11 +2,9 @@ import ISBN from '@saekitominaga/isbn-verify';
 
 /**
  * ISBN input field
- *
- * @version 1.0.3
  */
 export default class InputIsbn extends HTMLInputElement {
-	#checkDigitMessage: string | undefined; // チェックデジットが不正なときのメッセージ
+	#checkDigitMessage!: string; // チェックデジットが不正なときのメッセージ
 
 	#formSubmitEventListener: (ev: Event) => void;
 
@@ -82,7 +80,7 @@ export default class InputIsbn extends HTMLInputElement {
 		}
 
 		if (!new ISBN(this.value).isValid()) {
-			this._setMessage(<string>this.#checkDigitMessage);
+			this._setMessage(this.#checkDigitMessage);
 
 			return false;
 		}

@@ -10,7 +10,7 @@ ISBN input field by Custom Elements.
 
 ## Examples
 
-```
+```HTML
 <input is="x-isbn"
   data-validation-message-isbn-checkdigit="ISBN check digit is invalid."
 />

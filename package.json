@@ -18,7 +18,8 @@
 		"src"
 	],
 	"type": "module",
-	"browser": "dist/InputIsbn.js",
+	"main": "dist/InputIsbn.js",
+	"module": "dist/InputIsbn.js",
 	"types": "dist/InputIsbn.d.ts",
 	"repository": {
 		"type": "git",
@@ -26,10 +27,10 @@
 	},
 	"scripts": {
 		"_build:tsc": "ttsc -w",
-		"_build:compress": "onchange -f add -f change -v dist/InputIsbn.js -- brotlin compress dist/InputIsbn.js -m 1",
-		"_build:minify": "onchange -f add -f change -v dist/InputIsbn.js -- terser dist/InputIsbn.js -o dist/InputIsbn.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/InputIsbn.js.map',filename='InputIsbn.js',includeSources,url='InputIsbn.min.js.map'",
-		"_build:minify-compress": "onchange -f add -f change -v dist/InputIsbn.min.js -- brotlin compress dist/InputIsbn.min.js -m 1",
-		"_build:minify-declaration": "onchange -f add -f change -v dist/InputIsbn.d.ts -- cpy dist/InputIsbn.d.ts dist --rename=InputIsbn.min.d.ts",
+		"_build:compress": "onchange -f add -f change -v dist/InputIsbn.js -- brotlin compress {{file}} -m 1",
+		"_build:minify": "onchange -f add -f change -v dist/InputIsbn.js -- terser {{file}} -o {{fileDir}}/{{fileBaseNoExt}}.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='{{fileDir}}/{{fileBaseNoExt}}.js.map',filename='{{fileBaseNoExt}}.js',includeSources,url='{{fileBaseNoExt}}.min.js.map'",
+		"_build:minify-compress": "onchange -f add -f change -v dist/InputIsbn.min.js -- brotlin compress {{file}} -m 1",
+		"_build:minify-declaration": "onchange -f add -f change -v dist/InputIsbn.d.ts -- cpy {{file}} dist --rename=InputIsbn.min.d.ts",
 		"build": "run-p _build:*"
 	},
 	"dependencies": {

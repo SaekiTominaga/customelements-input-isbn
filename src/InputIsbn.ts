@@ -1,4 +1,4 @@
-import ISBN from '@saekitominaga/isbn-verify';
+import IsbnVerify from '@saekitominaga/isbn-verify';
 
 /**
  * ISBN input field
@@ -6,7 +6,7 @@ import ISBN from '@saekitominaga/isbn-verify';
 export default class InputIsbn extends HTMLInputElement {
 	#checkDigitMessage!: string; // チェックデジットが不正なときのメッセージ
 
-	#formSubmitEventListener: (ev: Event) => void;
+	readonly #formSubmitEventListener: (ev: Event) => void;
 
 	constructor() {
 		super();
@@ -79,7 +79,7 @@ export default class InputIsbn extends HTMLInputElement {
 			return true;
 		}
 
-		if (!new ISBN(this.value).isValid()) {
+		if (!new IsbnVerify(this.value).isValid()) {
 			this._setMessage(this.#checkDigitMessage);
 
 			return false;

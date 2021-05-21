@@ -19,6 +19,6 @@ ISBN input field by Custom Elements.
 ## Attributes
 
 <dl>
-<dt>data-validation-message-isbn-checkdigit [required]</dt>
+<dt><code>data-validation-message-isbn-checkdigit</code> [required]</dt>
 <dd>Error message when check digit does not match.</dd>
 </dl>

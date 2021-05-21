@@ -26,8 +26,8 @@
 		"url": "git+https://github.com/SaekiTominaga/customelements-input-isbn.git"
 	},
 	"scripts": {
-		"build": "tsc",
-		"watch": "tsc -w"
+		"build": "ttsc",
+		"watch": "ttsc -w"
 	},
 	"dependencies": {
 		"@saekitominaga/isbn-verify": "^1.2.3"

@@ -12,7 +12,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return privateMap.get(receiver);
 };
 var _checkDigitMessage, _formSubmitEventListener;
-import IsbnVerify from '../../isbn-verify/dist/ISBN.js';
+import IsbnVerify from '@saekitominaga/isbn-verify';
 /**
  * ISBN input field
  */
